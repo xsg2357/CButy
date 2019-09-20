@@ -90,7 +90,7 @@ int main52(){
  * FLAG在哪里，执行到goto时，就会跳转到FLAG，中间的语句就会被省略掉
  * 缺点：破坏代码结构，不推荐使用
  */
-int main(){
+int main53(){
 
     cout << " 1。 = "<< endl  ;
     cout << " 2。 = "<< endl  ;
