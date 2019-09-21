@@ -1,30 +1,30 @@
 #include <iostream>
 #include <string>
 
-# define Day 7 //³£Á¿¶¨Òå1
+# define Day 7 //å¸¸é‡å®šä¹‰1
 
 using  namespace std;
 
 int main0() {
     std::cout << "Hello, World!" << std::endl;
 
-    //±äÁ¿ÓÃÓÚ¹ÜÀíÄÚ´æ¿Õ¼ä,ÔÚ¸ø³£Á¿¡¢±äÁ¿ÆğÃûµÄÊ±ºò²»µÃÊ¹ÓÃ¹Ø¼ü×Ö
-    //±êÖ¾·û£º×ÖÄ¸ Êı×Ö ÏÂ»®Ïß
-    //µÚÒ»¸ö×ÖÄ¸±ØĞëÊÇ×ÖÄ¸ºÍÏÂ»®Ïß
-    //±êÖ¾·ûÖĞ×ÖÄ¸Çø·Ö´óĞ¡Ğ´
+    //å˜é‡ç”¨äºç®¡ç†å†…å­˜ç©ºé—´,åœ¨ç»™å¸¸é‡ã€å˜é‡èµ·åçš„æ—¶å€™ä¸å¾—ä½¿ç”¨å…³é”®å­—
+    //æ ‡å¿—ç¬¦ï¼šå­—æ¯ æ•°å­— ä¸‹åˆ’çº¿
+    //ç¬¬ä¸€ä¸ªå­—æ¯å¿…é¡»æ˜¯å­—æ¯å’Œä¸‹åˆ’çº¿
+    //æ ‡å¿—ç¬¦ä¸­å­—æ¯åŒºåˆ†å¤§å°å†™
     int a = 10;
     std::cout << "a = " << a << std::endl;
     /**
-     * ¶¨Òå³£Á¿ ³£Á¿ÊÇ²»¿ÉĞŞ¸ÄµÄ
-     * 1.# define ºê³£Á¿ ±í´ï·½Ê½£º # define ³£Á¿Ãû ³£Á¿Öµ
-     * 2.const ĞŞÊÎµÄ±äÁ¿ ±í´ï·½Ê½£º const ±äÁ¿ÀàĞÍ ±äÁ¿Ãû = ±äÁ¿Öµ
+     * å®šä¹‰å¸¸é‡ å¸¸é‡æ˜¯ä¸å¯ä¿®æ”¹çš„
+     * 1.# define å®å¸¸é‡ è¡¨è¾¾æ–¹å¼ï¼š # define å¸¸é‡å å¸¸é‡å€¼
+     * 2.const ä¿®é¥°çš„å˜é‡ è¡¨è¾¾æ–¹å¼ï¼š const å˜é‡ç±»å‹ å˜é‡å = å˜é‡å€¼
      */
-    std::cout << "Ò»ÖÜÓĞ" << Day << "Ìì" << std::endl; //Êä³ö³£Á¿ define
+    std::cout << "ä¸€å‘¨æœ‰" << Day << "å¤©" << std::endl; //è¾“å‡ºå¸¸é‡ define
 
-    const  int  month = 30; //³£Á¿¶¨Òå2
-    std::cout << "Ò»ÔÂÓĞ" << month << "Ìì" << std::endl;
+    const  int  month = 30; //å¸¸é‡å®šä¹‰2
+    std::cout << "ä¸€æœˆæœ‰" << month << "å¤©" << std::endl;
 
-    system("pause"); // Çë°´ÈÎÒâ¼ü¼ÌĞø. . .
+    system("pause"); // è¯·æŒ‰ä»»æ„é”®ç»§ç»­. . .
 
     return 0;
 }
@@ -32,13 +32,13 @@ int main0() {
 int main1(){
 
 
-    //1.¶ÌÕûĞÍ -32768 ~ 32767 2×Ö½Ú
+    //1.çŸ­æ•´å‹ -32768 ~ 32767 2å­—èŠ‚
     short num1 = 10;
-    //2.ÕûĞÍ  4 ×Ö½Ú
+    //2.æ•´å‹  4 å­—èŠ‚
     int num2 = 10;
-    //3.³¤ÕûĞÍ 4×Ö½Ú Linux 8×Ö½Ú
+    //3.é•¿æ•´å‹ 4å­—èŠ‚ Linux 8å­—èŠ‚
     long num3 = 10;
-    //4.³¤³¤ÕûĞÍ 8×Ö½Ú
+    //4.é•¿é•¿æ•´å‹ 8å­—èŠ‚
     long long num4 = 10;
 
     std::cout << "num1 = " << num1 << std::endl;
@@ -46,17 +46,16 @@ int main1(){
     std::cout << "num3 = " << num3 << std::endl;
     std::cout << "num4 = " << num4 << std::endl;
 
-    system("pause"); // Çë°´ÈÎÒâ¼ü¼ÌĞø
+    system("pause"); // è¯·æŒ‰ä»»æ„é”®ç»§ç»­
 
     /**
-     * sizeof ¹Ø¼ü×Ö¿ÉÒÔÍ³¼ÆÊı¾İÀàĞÍËùÕ¼ÄÚ´æ´óĞ¡
-     * Óï·¨£ºsizeof(Êı¾İÀàĞÍ/±äÁ¿)
+     * sizeof å…³é”®å­—å¯ä»¥ç»Ÿè®¡æ•°æ®ç±»å‹æ‰€å å†…å­˜å¤§å°
+     * è¯­æ³•ï¼šsizeof(æ•°æ®ç±»å‹/å˜é‡)
      *      short sizeof = 2
             int sizeof = 4
             long sizeof = 4
             long  long sizeof = 8
-
-            ×Ü½á£º short < int <= long <= long long
+            æ€»ç»“ï¼š short < int <= long <= long long
      */
     std::cout << "short sizeof = " << sizeof(short) << std::endl;
     std::cout << "int sizeof = " << sizeof(int) << std::endl;
@@ -67,19 +66,19 @@ int main1(){
 }
 
 int main2(){
-    //ÊµĞÍ£¨¸¡µãĞÍ£© µ¥¾«¶ÈfloatºÍË«¾«¶Èdouble Ä¬ÈÏÏÔÊ¾6Î»ÓĞĞ§Êı×Ö
-    //float 4 ×Ö½Ú 7Î»ÓĞĞ§Êı×Ö £»double 8 ×Ö½Ú 15~16Î»ÓĞĞ§Êı×Ö
+    //å®å‹ï¼ˆæµ®ç‚¹å‹ï¼‰ å•ç²¾åº¦floatå’ŒåŒç²¾åº¦double é»˜è®¤æ˜¾ç¤º6ä½æœ‰æ•ˆæ•°å­—
+    //float 4 å­—èŠ‚ 7ä½æœ‰æ•ˆæ•°å­— ï¼›double 8 å­—èŠ‚ 15~16ä½æœ‰æ•ˆæ•°å­—
     float f1 = 3.1415926f;
     std::cout << "f1 = " << f1 << std::endl;
 
     double  d1 = 3.1415926;
     std::cout << "d1 = " << d1 << std::endl;
 
-    //Í³¼ÆÄÚ´æ¿Õ¼ä
+    //ç»Ÿè®¡å†…å­˜ç©ºé—´
     std::cout << "float sizeof = " << sizeof(float) << std::endl;
     std::cout << "double sizeof = " << sizeof(double) << std::endl;
 
-    //¿ÆÑ§¼ÆÊı·¨
+    //ç§‘å­¦è®¡æ•°æ³•
     float f2 = 3e2; //3 * 10~2
     std::cout << "f2 = " << f2 << std::endl; //300
     float f3 = 3e-2; //3 * 0.1 ~ 2
@@ -89,9 +88,9 @@ int main2(){
 }
 
 int main3(){
-    //×Ö·ûĞÍÓÃÓÚµ¥¸ö×Ö·û char c = 'c'
-    //ÏÔÊ¾×Ö·û±äÁ¿Ê±£¬ÓÃµ¥ÒıºÅÀ¨ÆğÀ´£¬²»ÄÜÓÃË«ÒıºÅ £» µ¥ÒıºÅÖ»ÄÜÓÃÒ»¸ö×Ö·û£¬²»ÄÜÊÇ¶à¸ö×Ö·û
-    //cºÍC++ÖĞÕ¾1¸ö×Ö½Ú£¬²»ÄÜ·Åµ½ÄÚ´æÖĞ´æ´¢£¬¶øÊÇ°Ñ¶ÔÓ¦µÄASCII±àÂë·Åµ½ÄÚ´æÖĞ
+    //å­—ç¬¦å‹ç”¨äºå•ä¸ªå­—ç¬¦ char c = 'c'
+    //æ˜¾ç¤ºå­—ç¬¦å˜é‡æ—¶ï¼Œç”¨å•å¼•å·æ‹¬èµ·æ¥ï¼Œä¸èƒ½ç”¨åŒå¼•å· ï¼› å•å¼•å·åªèƒ½ç”¨ä¸€ä¸ªå­—ç¬¦ï¼Œä¸èƒ½æ˜¯å¤šä¸ªå­—ç¬¦
+    //cå’ŒC++ä¸­ç«™1ä¸ªå­—èŠ‚ï¼Œä¸èƒ½æ”¾åˆ°å†…å­˜ä¸­å­˜å‚¨ï¼Œè€Œæ˜¯æŠŠå¯¹åº”çš„ASCIIç¼–ç æ”¾åˆ°å†…å­˜ä¸­
 
     char c = 'a';
     std::cout << "c = " << c << std::endl;
@@ -102,8 +101,8 @@ int main3(){
 }
 
 int main4(){
-    //×ªÒå×Ö·û£º\a ¾¯±¨ \b ÍË¸ñ \f »»Ò³  \n »»ĞĞ \r »Ø³µ  \tË®Æ½ÖÆ±í
-    //\v ´¹Ö±ÖÆ±í  \\´ú±íÒ»¸ö·´Ğ±¸Ü¡°\¡± \' ´ú±íÒ»¸öµ¥ÒıºÅ  µÈ
+    //è½¬ä¹‰å­—ç¬¦ï¼š\a è­¦æŠ¥ \b é€€æ ¼ \f æ¢é¡µ  \n æ¢è¡Œ \r å›è½¦  \tæ°´å¹³åˆ¶è¡¨
+    //\v å‚ç›´åˆ¶è¡¨  \\ä»£è¡¨ä¸€ä¸ªåæ–œæ â€œ\â€ \' ä»£è¡¨ä¸€ä¸ªå•å¼•å·  ç­‰
     std::cout << "ccc\acccccc" << std::endl;
     std::cout << "ccc\bcccccc" << std::endl;
     std::cout << "ccc\fcccccc" << std::endl;
@@ -120,59 +119,59 @@ int main4(){
 }
 
 int main5(){
-    //×Ö·û´®£ºÓÃÓÚ±íÊ¾Ò»´®×Ö·û
-    //1.C·ç¸ñ ²»ÄÜÓÃµ¥ÒıºÅ ÒªÓÃË«ÒıºÅ
+    //å­—ç¬¦ä¸²ï¼šç”¨äºè¡¨ç¤ºä¸€ä¸²å­—ç¬¦
+    //1.Cé£æ ¼ ä¸èƒ½ç”¨å•å¼•å· è¦ç”¨åŒå¼•å·
     char str1[] = "abcde";
     std::cout << "str1 ==" << str1 << std::endl;
 
-    //2.C++·ç¸ñ ĞèÒª¼ÓÈëÍ·ÎÄ¼ş#include <string>
+    //2.C++é£æ ¼ éœ€è¦åŠ å…¥å¤´æ–‡ä»¶#include <string>
     string str2 = "Hello World";
     std::cout << "str2 ==" << str2 << std::endl;
     return 0;
 }
 
 int main6(){
-    //²¼¶ûÀàĞÍ ´´½¨boolÊı¾İ
+    //å¸ƒå°”ç±»å‹ åˆ›å»ºboolæ•°æ®
     bool  flag = false;
     bool  flag1 = true;
     std::cout << "flag ==" << flag << std::endl; //0
     std::cout << "flag1 ==" << flag1 << std::endl;//1
 
-    //²é¿´²¼¶ûÀàĞÍÄÚ´æ¿Õ¼ä
-    std::cout << "sizeof bool ==" << sizeof(bool) << std::endl; //1×Ö½Ú
+    //æŸ¥çœ‹å¸ƒå°”ç±»å‹å†…å­˜ç©ºé—´
+    std::cout << "sizeof bool ==" << sizeof(bool) << std::endl; //1å­—èŠ‚
 
     return 0;
 }
 
 int main7(){
 
-    //    1.ÕûĞÍ
+    //    1.æ•´å‹
     int a = 0;
-    std::cout << "Çë¸øÕûĞÍ±äÁ¿a¸³Öµ£º" << std::endl;
+    std::cout << "è¯·ç»™æ•´å‹å˜é‡aèµ‹å€¼ï¼š" << std::endl;
     cin >> a;
     std::cout << "a ==" << a << std::endl;
 
-    //    ¸¡µãĞÍ
+    //    æµ®ç‚¹å‹
     int f = 0;
-    std::cout << "Çë¸ø¸¡µãĞÍ±äÁ¿f¸³Öµ£º" << std::endl;
+    std::cout << "è¯·ç»™æµ®ç‚¹å‹å˜é‡fèµ‹å€¼ï¼š" << std::endl;
     cin >> f;
     std::cout << "f ==" << f << std::endl;
 
-    //    ×Ö·ûĞÍ
+    //    å­—ç¬¦å‹
     char c = 'a';
-    std::cout << "Çë¸ø×Ö·ûĞÍ±äÁ¿f¸³Öµ£º" << std::endl;
+    std::cout << "è¯·ç»™å­—ç¬¦å‹å˜é‡fèµ‹å€¼ï¼š" << std::endl;
     cin >> c;
     std::cout << "c ==" << c << std::endl;
 
-    //   ×Ö·û´®
+    //   å­—ç¬¦ä¸²
     string str = "hello";
-    std::cout << "Çë¸ø×Ö·û´®±äÁ¿str¸³Öµ£º" << std::endl;
+    std::cout << "è¯·ç»™å­—ç¬¦ä¸²å˜é‡strèµ‹å€¼ï¼š" << std::endl;
     cin >> str;
     std::cout << "str ==" << str << std::endl;
 
-    //   ²¼¶ûÖµ
+    //   å¸ƒå°”å€¼
     bool flag = false;
-    std::cout << "Çë¸ø²¼¶ûÖµ±äÁ¿flag¸³Öµ£º" << std::endl;
+    std::cout << "è¯·ç»™å¸ƒå°”å€¼å˜é‡flagèµ‹å€¼ï¼š" << std::endl;
     cin >> flag;
     std::cout << "flag ==" << flag << std::endl;
 
