@@ -68,9 +68,12 @@ int main62(){
     cout << "size of arr is" << sizeof(arr) << endl; //32
     cout << "size of arr single is" << sizeof(arr[0]) << endl; //4
     cout << "size of arr length is" << sizeof(arr) /sizeof(arr[0]) << endl; //元素个数：8
-    cout << "size of arr the first  address is" << (int)arr << endl; //6553248
-    cout << "size of arr the first single address is" << (int)&arr[0] << endl; //6553248
-    cout << "size of arr the second  address is" << (int)&arr[1] << endl; //6553252
+//    cout << "size of arr the first  address is" << (int)arr << endl; //6553248 x32
+    cout << "size of arr the first  address is" << (long long)arr << endl; //6553248 x64
+//    cout << "size of arr the first single address is" << (int)&arr[0] << endl; //6553248 x32
+    cout << "size of arr the first single address is" << (long long)&arr[0] << endl; //6553248 x64
+//    cout << "size of arr the second  address is" << (int)&arr[1] << endl; //6553252 x32
+    cout << "size of arr the second  address is" << (long long)&arr[1] << endl; //6553252 x64
 
     return  0;
 }
@@ -261,11 +264,16 @@ int main67(){
     cout << sizeof(arr2[0])/sizeof(arr2[0][0]) << "==> is size of arr first column. " << endl;//列数
 
     //第一行和第二行数据的内存地址相差12
-    cout << "size of arr the first  address is" << (int)arr2 << endl; //6553256
-    cout << "size of arr the first single address is" << (int)&arr2[0] << endl; //6553256
-    cout << "size of arr the first  address is" << (int)&arr2[0][0] << endl; //6553256
-    cout << "size of arr the second  address is" << (int)&arr2[0][1] << endl; //6553260
-    cout << "size of arr the second  address is" << (int)&arr2[1][0] << endl; //6553268
+//    cout << "size of arr the first  address is" << (int)arr2 << endl; //6553256 x32
+    cout << "size of arr the first  address is" << (long long)arr2 << endl; //6553256 x64
+//    cout << "size of arr the first single address is" << (int)&arr2[0] << endl; //6553256 x32
+    cout << "size of arr the first single address is" << (long long)&arr2[0] << endl; //6553256 x64
+//    cout << "size of arr the first  address is" << (int)&arr2[0][0] << endl; //6553256 x32
+    cout << "size of arr the first  address is" << (long long)&arr2[0][0] << endl; //6553256 x64
+//    cout << "size of arr the second  address is" << (int)&arr2[0][1] << endl; //6553260 x32
+    cout << "size of arr the second  address is" << (long long)&arr2[0][1] << endl; //6553260 x64
+//    cout << "size of arr the second  address is" << (int)&arr2[1][0] << endl; //6553268 x32
+    cout << "size of arr the second  address is" << (long long)&arr2[1][0] << endl; //6553268 x64
 
     return 0;
 }
