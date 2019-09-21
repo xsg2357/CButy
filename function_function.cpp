@@ -139,7 +139,7 @@ int max(int a, int b) {
  * 3.在头文件中编写函数的声明
  * 4.在源文件中编写函数的定义
  */
-int main(){
+int main74(){
 
     int a = function_file(30,40);
     cout << "最大值：A = " << a << endl;
