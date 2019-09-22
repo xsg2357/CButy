@@ -124,7 +124,110 @@ int main85(){
  * 指针和数组
  * 利用指针访问数组的元素
  */
-int main(){
+int main86(){
 
+    int arr[] = {1,3,2,4,5,6,7,8,9,110};
+
+    cout << "this first ploit is" << arr[0] << endl;
+    int *p = arr; //arr就是数组首地址
+
+    cout << "*p this first ploit is " << *p << endl;
+
+    p ++; //让指针向后偏移4个字节
+    cout << "*p this second ploit is " << *p << endl;
+
+    int *p2 = arr;
+    //利用指针来遍历数组
+    for (int i = 0; i < sizeof(arr)/ sizeof(arr[0]); ++i) {
+        cout  << * p2 << " ";
+        p2 ++;
+    }
+    //    1 3 2 4 5 6 7 8 9 110
     return 0;
 }
+
+/**
+ * 值传递
+ */
+void swap01(int a,int b){
+    int  temp = a;
+    a = b;
+    b= temp;
+
+    cout << " after: a = "<< a ;
+    cout << " after: b = "<< b ;
+
+}
+
+/**
+ * 地址传递
+ */
+void swap02(int *p,int *p2){
+    int  temp = *p;
+    *p = *p2;
+    *p2= temp;
+
+    cout << "swap02 after: *p = "<< *p ;
+    cout << "swap02 after: *p2 = "<< *p2 ;
+
+}
+
+
+/**
+ *  指针和函数
+ */
+int main87(){
+
+    int a= 10;
+    int b = 20;
+    swap01(a,b);
+    cout << " a = "<< a ;
+    cout << " b = "<< b ;
+    //    after: a = 20 after: b = 10 ,a = 10 b = 20
+    cout << endl;
+
+    // 地址传递
+    swap02(&a,&b);
+    cout << " a = "<< a ;
+    cout << " b = "<< b ;
+    //    after: a = 20 after: b = 10  ,a = 10 b = 20
+
+    return  0;
+}
+
+/**
+ * 冒泡排序
+ */
+void bubbleSort(int *arr,int len){
+    for (int i = 0; i <len-1 ; ++i) {
+        for (int j = 0; j < len -i -1 ; ++j) {
+            if (arr[j] >arr[j+1]){
+                int  temp = arr[j];
+                arr[j]  = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+}
+
+void  printArr(int *arr,int len){
+    for (int i = 0; i < len; ++i) {
+        cout << " "<< arr[i] ;
+    }
+}
+
+int main88(){
+
+    //创建一个数组
+    int arr[] = {1,3,2,4,5,6,7,8,9,110};
+    int len = sizeof(arr) / sizeof(arr[0]);
+
+    //利用函数进行排序
+    bubbleSort(arr,len);
+
+    //打印排序后的数组
+    printArr(arr,len);
+    //    1 2 3 4 5 6 7 8 9 110
+    return  0;
+}
+
