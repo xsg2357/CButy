@@ -92,7 +92,7 @@ void deletePerson(address_books *pBooks, int ret) {
 /**
  * 通讯录
  */
-int main() {
+int main101() {
 
     int select = 0;//创建用户选择输入变量
 
