@@ -132,7 +132,7 @@ public:
    mutable  int  _b; //成员属性声明时加关键字mutable后，在场函数中依然可以修改
 };
 
-int main(){
+int main120(){
 
     const  Cat1 cat12;
     //    cat12.func();
