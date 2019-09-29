@@ -379,6 +379,13 @@ void car_test01(){
     delete car;
     car = NULL;
 
+   /* Car
+            ShopCar
+    TomShopCar speak...
+            ~ ShopCar
+    ~ Car*/
+
+
 }
 
 /**
