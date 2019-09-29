@@ -92,6 +92,7 @@ int main130() {
  * 继承同名成员处理方式
  *      访问子类同名成员 直接访问即可
  *      访问父类同名成员 需要加作用域
+ * 静态和非静态处理方式一样
  */
 class Base1 {
 public:
@@ -108,16 +109,25 @@ public:
     void func() {
         cout << " parent func" << endl;
     }
+
     void func(int a) {
         cout << " parent func(int a)" << endl;
     }
 
+    static void fund() {
+        cout << " parent static  void fund" << endl;
+    }
+
     int _a;
+    static int _d;
 protected:
     int _b;
 private:
     int _c;
 };
+
+int Base1::_d = 100; // 初始化静态变量Base1::_d
+
 
 /**
  * 公共继承
@@ -141,9 +151,17 @@ public:
         cout << " son func" << endl;
     }
 
+    static void fund() {
+        cout << " child static  void fund" << endl;
+    }
+
     int _a;
 
+    static int _d;
+
 };
+
+int Son1::_d = 100; // Son1::_d
 
 /**
  * 保护继承
@@ -237,6 +255,7 @@ void test_size_06() {
  * 同名函数的处理 子类：直接调用访问 父类需要加作用域
  * 访问父类的同名函数：子类变量.父类名称::父类同名函数
  * 如果子类中出现了和父类的同名函数，子类则把父类中的所有同名函数（重载）全部隐藏掉 调用方法为:加上父类的作用域
+ * 如果子类中出现了和父类的同名静态函数，子类则把父类中的所有同名静态函数（重载）全部隐藏掉 调用方法为:加上父类的作用域
  */
 void test_size_07() {
     Son1 s;
@@ -246,14 +265,164 @@ void test_size_07() {
     s.Base1::func(100);
 }
 
+void test_size_08() {
 
-int main() {
+    //通过对象来访问静态变量
+    Son1 s;
+    cout << " _d of static son is " << s._d << endl; //100
+    cout << " _d of static Base is " << s.Base1::_d << endl; //100
 
-    test_size_07();
+    //通过对象访问静态成员函数
+    s.fund();
+    s.Base1::fund();
+    //    child static  void fund
+    //    parent static  void fund
+
+    //通过类名来访问静态变量
+    cout << " _d of static son is " << Son1::_d << endl; //100
+    cout << " _d of static Base is " << Base1::_d << endl; //100
+    cout << " _d of static Base is " << Son1::Base1::_d << endl; //100 通过子类作用域下的父类作用下的静态变量
+
+    //通过类名来访问静态成员函数
+    Son1::fund();
+    Base1::fund();
+    Son1::Base1::fund();
+
+    //    child static  void fund
+    //    parent static  void fund
+    //    parent static  void fund
+
+}
+
+
+int main131() {
+
+    test_size_08();
 //    test_size_06();
 //    test_size_05();
 
 //    test_size_04();
     return 0;
+}
+
+
+/**
+ * 多继承语法
+ * C++允许一个类继承多个类
+ * 语法：class 子类 ：继承方式 父类1，继承方式 父类2，继承方式 父类3...{}
+ * 多继承会可能发生同名成员出现 需要加作用域区分
+ * 实际开发中 不推荐使用多继承
+ */
+class Base2 {
+
+public:
+    Base2() {
+        _a = 100;
+    }
+
+
+    int _a;
+};
+
+class Base3 {
+
+public:
+    Base3() {
+        _b = 300;
+        _a = 100;
+    }
+
+
+
+    int _b;
+    int _a;
+};
+
+
+class Sons : public Base2, public Base3 {
+
+public:
+
+    Sons() {
+        _C = 200;
+        _D = 400;
+    }
+
+    int _C;
+    int _D;
+};
+
+int main132() {
+
+    Sons sons;
+
+    cout << "size of sons " << sizeof(sons) << endl; //16 byte
+    //    多继承会可能发生同名成员出现 需要加作用域区分
+    cout << "size of sons parent a _a" << sons.Base2::_a << endl;
+    cout << "size of sons parent b _a" << sons.Base3::_a << endl;
+
+    //    size of sons parent a _a100
+    //    size of sons parent b _a100
+
+    return 0;
+}
+
+
+/**
+ * 菱形继承（钻石继承）
+ * 两个派生类继承他同一个基类
+ * 又有某个派生类同时继承这两个派生类
+ *
+ */
+class Anim{
+
+public:
+
+    int _age;
+
+};
+
+/**
+ *     // 利用需继承可接解决菱形的问题
+ *     继承之前加上virtual 变成需继承
+ *     基类前面机上virtual 称为虚基类
+ *     vbptr 虚基类指针 v->virtual b->base ptr->pointer
+ *     vbtable 虚基类表
+ *     继承的是两个指针 从而找到数据的偏移量
+ */
+class Sheep : virtual  public  Anim{
+
+};
+
+class Tuo : virtual public  Anim{
+
+};
+
+
+class  SheepTuo : public  Sheep, public  Tuo{
+
+};
+
+
+int main133() {
+
+    SheepTuo st;
+//    st._age = 18;
+
+    st.Sheep::_age = 18;
+    st.Tuo::_age = 28;
+
+    //当菱形继承 两个父类有相同数据 需要加以作用域区分 造成数据浪费
+    // 利用需继承可接解决菱形的问题 继承之前加上virtual
+
+    cout << " st.Sheep::_age = " <<  st.Sheep::_age << endl;
+    cout << " st.Tuo::_age = " <<  st.Tuo::_age << endl;
+    cout << " st._age = " <<  st._age << endl;
+
+    //    st.Sheep::_age = 28
+    //    st.Tuo::_age = 28
+    //    st._age = 28
+
+    return  0;
 }
 
