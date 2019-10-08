@@ -24,5 +24,5 @@
        - 二进制读文件 二进制写文件 ios::in|ios::binary
          二进制方式写文件主要利用流对象调用成员函数read
          函数原型：ostream&read（ char *buffer,int len）
-         参数解释：字符指针buffer指向内存中一段存储空间，len读写的字节数
+         参数解释：字符指针buffer指向内存中一段存储空间，len读写的字节数  
 
