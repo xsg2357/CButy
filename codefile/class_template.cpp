@@ -300,5 +300,17 @@ int main149(){
     cout   << endl;
     cout  << "Capacity == "<<myArrayTemplate2.getCapacity() << endl;
     cout  << "size == "<<myArrayTemplate2.getSize() << endl;
+   /* constructor
+    print:
+    0 1 2 3 4
+    Capacity == 5
+    size == 5
+    print:
+    copy constructor
+    0 1 2 3 4
+    Capacity == 5
+    size == 4
+    ~ constructor
+    ~ constructor*/
     return  0;
 }
