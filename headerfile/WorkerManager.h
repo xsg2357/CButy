@@ -36,9 +36,15 @@ public:
      */
     void saveEmp();
     void showEmp();
+    void delEmp();
+    void ModEmp();
+    void findEmp();
+    void sortEmp();
     void initEmp();
+    void cleanEmp();
     string UTF8ToGB(const char* str);
     int getEmpNum();
+    int isExistEmp(int id);
 
 
     Worker ** workerArray;
