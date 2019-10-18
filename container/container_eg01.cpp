@@ -7,7 +7,7 @@
 #include <deque>
 #include <vector>
 #include <algorithm>
-#include <time.h>
+#include <ctime>
 
 using namespace std;
 
@@ -63,7 +63,8 @@ void setScore(vector<Container01Person> &v) {
 
         //取平均分
         int sum = 0;
-        for (deque<int>::iterator dit = d.begin(); dit != d.end(); dit++)
+//        for (deque<int>::iterator dit = d.begin(); dit != d.end(); dit++)
+        for (auto dit = d.begin(); dit != d.end(); dit++)
         {
             sum += *dit; //累加每个评委的分数
         }
