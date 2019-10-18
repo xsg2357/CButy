@@ -85,7 +85,7 @@ void showScore(vector<Container01Person>&v)
     }
 }
 
-int main(){
+int main156(){
     //随机数种子
     srand((unsigned int)time(NULL));
 
