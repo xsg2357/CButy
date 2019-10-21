@@ -51,7 +51,7 @@ void  createEg2Worker(vector<EgWorker> &v){
         分组后，将员工部门编号作为key，具体员工作为value，放入到multimap容器中
         分部门显示员工信息
  */
-int main(){
+int main162(){
     srand((unsigned int)time(NULL));
 
     //1、创建员工
