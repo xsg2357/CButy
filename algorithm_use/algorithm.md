@@ -42,3 +42,9 @@
     算法简介：
         accumulate // 计算容器元素累计总和
         fill // 向容器中添加元素
+
+### 常用集合算法
+
+    set_intersection // 求两个容器的交集
+    set_union // 求两个容器的并集
+    set_difference // 求两个容器的差集
