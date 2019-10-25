@@ -19,3 +19,11 @@
     binary_search //二分查找法
     count //统计元素个数
     count_if //按条件统计元素个数
+    按值统计用count，按条件统计用count_if
+
+### 常用排序算法
+
+    sort //对容器内元素进行排序
+    random_shuffle //洗牌 指定范围内的元素随机调整次序
+    merge // 容器元素合并，并存储到另一容器中
+    reverse // 反转指定范围的元素
